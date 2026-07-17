@@ -19,7 +19,12 @@ for (const file of files) {
   if (!match) continue;
 
   try {
-    records.push(JSON.parse(match[1]));
+    const metadata = JSON.parse(match[1]);
+    const editorialNote = source
+      .slice(match[0].length)
+      .replace(/^# .+\n+/, "")
+      .trim();
+    records.push({ ...metadata, editorialNote });
   } catch (error) {
     throw new Error(`Invalid JSON metadata in ${file}: ${error.message}`);
   }

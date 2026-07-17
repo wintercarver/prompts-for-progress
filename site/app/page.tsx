@@ -2,52 +2,24 @@
 
 import { useState } from "react";
 import { records } from "./records.generated";
+import {
+  displayDate,
+  outcomeLabels,
+  outcomeOrder,
+  strongestEvidence,
+  type ArchiveRecord,
+} from "./record-utils";
 
-type RecordItem = (typeof records)[number];
-
-const outcomeLabels: Record<string, string> = {
-  complete: "Complete result",
-  partial: "Partial progress",
-  mixed: "Mixed campaign",
-  unsuccessful: "Documented attempt",
-  rediscovery: "Rediscovery",
-  disputed: "Disputed",
-};
-
-const outcomeOrder = ["complete", "partial", "mixed", "unsuccessful"];
-
-function strongestEvidence(record: RecordItem) {
-  const types = record.validation.map((item) => item.type);
-  if (types.includes("formal")) return "Formal";
-  if (types.includes("certified-computation")) return "Certified";
-  if (types.includes("wet-lab")) return "Experimental";
-  if (types.includes("peer-review")) return "Peer-reviewed";
-  if (types.includes("expert-review")) return "Expert-reviewed";
-  return "Reported";
-}
-
-function anchorYear(record: RecordItem) {
+function anchorYear(record: ArchiveRecord) {
   const attempt = record.timeline.find((event) => event.type === "attempt");
   return Number((attempt ?? record.timeline[0]).date.slice(0, 4));
-}
-
-function displayDate(date: string) {
-  if (date.length === 4) return date;
-  if (date.length === 7) {
-    return new Intl.DateTimeFormat("en", { month: "short", year: "numeric", timeZone: "UTC" }).format(
-      new Date(`${date}-01T00:00:00Z`),
-    );
-  }
-  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(
-    new Date(`${date}T00:00:00Z`),
-  );
 }
 
 export default function Home() {
   const [domain, setDomain] = useState("All");
   const [outcome, setOutcome] = useState("All");
 
-  const publicRecords = records as readonly RecordItem[];
+  const publicRecords = records as readonly ArchiveRecord[];
   const domains = ["All", ...Array.from(new Set(publicRecords.map((record) => record.domain))).sort()];
   const years = [2023, 2024, 2025, 2026];
 
@@ -202,6 +174,7 @@ export default function Home() {
         <div className="record-grid">
           {filtered.map((record, index) => (
             <article className="record-card" key={record.id}>
+              <a className="card-link" href={`/records/${record.id}`} aria-label={`View full record: ${record.title}`} />
               <div className="card-index">{String(index + 1).padStart(2, "0")}</div>
               <div className="card-meta">
                 <span className={`status-pill outcome-${record.outcome}`}>{outcomeLabels[record.outcome]}</span>
@@ -216,10 +189,9 @@ export default function Home() {
                 <div><dt>First dated event</dt><dd>{displayDate(record.timeline[0].date)}</dd></div>
               </dl>
               <p className="caveat"><strong>Keep in view:</strong> {record.caveat}</p>
-              <div className="source-links">
-                {record.sources.slice(0, 3).map((source) => (
-                  <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label}<span aria-hidden="true">↗</span></a>
-                ))}
+              <div className="card-footer">
+                <span>View full record</span>
+                <span aria-hidden="true">→</span>
               </div>
             </article>
           ))}

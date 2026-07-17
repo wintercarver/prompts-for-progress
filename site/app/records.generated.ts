@@ -56,7 +56,8 @@ export const records = [
         "kind": "paper"
       }
     ],
-    "caveat": "Many technically correct outputs exploited unintended readings or rediscovered literature; the system configuration and raw outputs were not fully reproducible from the paper alone."
+    "caveat": "Many technically correct outputs exploited unintended readings or rediscovered literature; the system configuration and raw outputs were not fully reproducible from the paper alone.",
+    "editorialNote": "# Aletheia scans 700 open-labeled Erdős problems\n\nThis campaign is central to the archive because it preserves a denominator and exposes failure modes that disappear when only successful cases are publicized."
   },
   {
     "schemaVersion": "0.1",
@@ -108,7 +109,8 @@ export const records = [
         "kind": "code"
       }
     ],
-    "caveat": "Results for stronger or related variants must not be counted as literal resolutions of the canonical problems; full per-run transcripts are unavailable."
+    "caveat": "Results for stronger or related variants must not be counted as literal resolutions of the canonical problems; full per-run transcripts are unavailable.",
+    "editorialNote": "# AlphaProof Nexus searches open Erdős and OEIS problems\n\nThe campaign illustrates why formal verification, statement fidelity, novelty, and mathematical significance must remain distinct fields."
   },
   {
     "schemaVersion": "0.1",
@@ -171,7 +173,8 @@ export const records = [
         "kind": "code"
       }
     ],
-    "caveat": "No complete run transcript was located, and the result was extremely recent at the research cutoff."
+    "caveat": "No complete run transcript was located, and the result was extremely recent at the research cutoff.",
+    "editorialNote": "# GPT-5.6 produces a proof of the Cycle Double Cover Conjecture\n\nThe two-page prompt is primarily a research-management and adversarial-validation protocol: portfolio diversity, approach registries, independent agents, cross-pollination, and repeated audits are more central than domain hints."
   },
   {
     "schemaVersion": "0.1",
@@ -232,7 +235,8 @@ export const records = [
         "kind": "paper"
       }
     ],
-    "caveat": "Substantial human correction and proof development were required; this was not an autonomous resolution."
+    "caveat": "Substantial human correction and proof development were required; this was not an autonomous resolution.",
+    "editorialNote": "# GPT-5 contributes the key idea for Erdős problem 848\n\nThe full chat makes the division of labor unusually inspectable and supports later prompt-method analysis."
   },
   {
     "schemaVersion": "0.1",
@@ -284,7 +288,8 @@ export const records = [
         "kind": "announcement"
       }
     ],
-    "caveat": "The prompt is an evolving program scaffold plus exemplars, not a single natural-language research prompt."
+    "caveat": "The prompt is an evolving program scaffold plus exemplars, not a single natural-language research prompt.",
+    "editorialNote": "# FunSearch improves cap-set constructions\n\nThis is an early workflow-level case: a language model proposes programs, an automated evaluator scores them, and successful programs become context for later generations. The archive should preserve the scaffold and evaluator as prompt artifacts when licensing permits."
   },
   {
     "schemaVersion": "0.1",
@@ -349,7 +354,8 @@ export const records = [
         "kind": "code"
       }
     ],
-    "caveat": "ROCK inhibition and phagocytosis were individually known; the novel contribution is chiefly the proposed dry-AMD connection, and evidence remains in vitro."
+    "caveat": "ROCK inhibition and phagocytosis were individually known; the novel contribution is chiefly the proposed dry-AMD connection, and evidence remains in vitro.",
+    "editorialNote": "# Robin proposes a dry-AMD drug-repurposing direction\n\nExact prompts, sample trajectories, code, and the RNA-seq accession make this one of the strongest reproducibility records in agentic biology."
   },
   {
     "schemaVersion": "0.1",
@@ -407,7 +413,8 @@ export const records = [
         "kind": "paper"
       }
     ],
-    "caveat": "Cell-line synergy is not equivalent to therapeutic efficacy or safety; the same campaign contains explicit model errors and failed combinations."
+    "caveat": "Cell-line synergy is not equivalent to therapeutic efficacy or safety; the same campaign contains explicit model errors and failed combinations.",
+    "editorialNote": "# GPT-4 proposes breast-cancer drug combinations\n\nThis campaign is valuable precisely because it preserves both positive and negative experimental outcomes, plus a confident but incorrect biological explanation."
   },
   {
     "schemaVersion": "0.1",
@@ -464,7 +471,8 @@ export const records = [
         "kind": "announcement"
       }
     ],
-    "caveat": "No complete transcript was located; the model made many incorrect suggestions and did not assemble the final proof autonomously."
+    "caveat": "No complete transcript was located; the model made many incorrect suggestions and did not assemble the final proof autonomously.",
+    "editorialNote": "# Point convergence of Nesterov accelerated gradient\n\nThe interaction reportedly lasted about twelve hours over three days. This record is a useful counterweight to one-shot narratives: researcher judgment selected and repaired a promising but initially incorrect model idea."
   },
   {
     "schemaVersion": "0.1",
@@ -533,7 +541,8 @@ export const records = [
         "kind": "paper"
       }
     ],
-    "caveat": "The prompt appendix simulates the interaction pattern but is not a complete raw transcript; validation status remains problem-specific and mutable."
+    "caveat": "The prompt appendix simulates the interaction pattern but is not a complete raw transcript; validation status remains problem-specific and mutable.",
+    "editorialNote": "# OpenAI attempts all ten First Proof problems\n\nThis should eventually become a parent campaign with ten child attempt records. Keeping it as one campaign in the prototype preserves the mixed result and avoids implying five settled breakthroughs."
   },
   {
     "schemaVersion": "0.1",
@@ -600,7 +609,8 @@ export const records = [
         "kind": "paper"
       }
     ],
-    "caveat": "The internal model identity, hidden system prompt, attempt count, and compute budget were not disclosed; the public trace is abridged."
+    "caveat": "The internal model identity, hidden system prompt, attempt count, and compute budget were not disclosed; the public trace is abridged.",
+    "editorialNote": "# AI model disproves the planar unit-distance conjecture\n\nThis is one of the most completely documented headline cases: the initial prompt, original response, long abridged trace, proof, and external mathematical commentary are all public."
   },
   {
     "schemaVersion": "0.1",
@@ -662,7 +672,8 @@ export const records = [
         "kind": "code"
       }
     ],
-    "caveat": "The work mutated known scaffolds and measured binding, not viral neutralization; humans supplied high-level feedback and ran the experiments."
+    "caveat": "The work mutated known scaffolds and measured binding, not viral neutralization; humans supplied high-level feedback and ran the experiments.",
+    "editorialNote": "# Virtual Lab designs SARS-CoV-2 nanobody variants\n\nThe public repository contains unusually rich multi-agent discussion and scoring traces, making this a strong non-mathematical prompt-provenance case."
   },
   {
     "schemaVersion": "0.1",
@@ -723,6 +734,7 @@ export const records = [
         "kind": "transcript"
       }
     ],
-    "caveat": "The result was new and not peer reviewed at the research cutoff; the human researcher selected the problem, authored the elaborate prompt, checked the proof, and formalized it."
+    "caveat": "The result was new and not peer reviewed at the research cutoff; the human researcher selected the problem, authored the elaborate prompt, checked the proof, and formalized it.",
+    "editorialNote": "# GPT-5.6 closes a zeroth-order convex-optimization gap\n\nThis is a particularly strong prompt-transfer case: a researcher explicitly adapted the Cycle Double Cover orchestration style to a different mathematical domain and preserved the resulting run."
   }
 ] as const;
