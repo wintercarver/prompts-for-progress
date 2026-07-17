@@ -1,0 +1,7 @@
+---
+{"schemaVersion":"0.1","id":"funsearch-cap-sets","title":"FunSearch improves cap-set constructions","recordType":"case","domain":"mathematics","field":"combinatorics","outcome":"partial","contributionMode":"agentic search","summary":"An evolutionary LLM-and-evaluator loop found larger cap sets in several dimensions and new online bin-packing heuristics.","people":["Bernardino Romera-Paredes","Alhussein Fawzi","DeepMind collaborators"],"organizations":["Google DeepMind"],"systems":["FunSearch","PaLM 2"],"promptAvailability":"partial","timeline":[{"date":"2023-12-14","precision":"day","type":"peer-review","label":"Nature paper published"}],"validation":[{"type":"peer-review","status":"passed","note":"Peer-reviewed paper with executable evaluators and reproducible constructions."}],"sources":[{"label":"Nature paper","url":"https://www.nature.com/articles/s41586-023-06924-6","kind":"paper"},{"label":"DeepMind account","url":"https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/","kind":"announcement"}],"caveat":"The prompt is an evolving program scaffold plus exemplars, not a single natural-language research prompt."}
+---
+
+# FunSearch improves cap-set constructions
+
+This is an early workflow-level case: a language model proposes programs, an automated evaluator scores them, and successful programs become context for later generations. The archive should preserve the scaffold and evaluator as prompt artifacts when licensing permits.

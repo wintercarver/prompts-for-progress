@@ -1,0 +1,7 @@
+---
+{"schemaVersion":"0.1","id":"nesterov-point-convergence","title":"Point convergence of Nesterov accelerated gradient","recordType":"case","domain":"mathematics","field":"optimization","outcome":"complete","contributionMode":"human-ai collaboration","summary":"GPT-5 suggested a useful restructuring during a multi-session collaboration; Ernest Ryu recognized the key structure, corrected errors, and developed the complete proof with Uijeong Jang.","people":["Uijeong Jang","Ernest K. Ryu"],"organizations":["UCLA","OpenAI"],"systems":["GPT-5"],"promptAvailability":"unavailable","timeline":[{"date":"2025-07-22","precision":"day","type":"disclosure","label":"First public account"},{"date":"2025-10-27","precision":"day","type":"preprint","label":"Preprint posted"}],"validation":[{"type":"expert-review","status":"passed","note":"Human authors checked and wrote the mathematical proof."}],"sources":[{"label":"Preprint","url":"https://arxiv.org/abs/2510.23513","kind":"paper"},{"label":"First-person workflow account","url":"https://openai.com/index/gpt-5-mathematical-discovery/","kind":"announcement"}],"caveat":"No complete transcript was located; the model made many incorrect suggestions and did not assemble the final proof autonomously."}
+---
+
+# Point convergence of Nesterov accelerated gradient
+
+The interaction reportedly lasted about twelve hours over three days. This record is a useful counterweight to one-shot narratives: researcher judgment selected and repaired a promising but initially incorrect model idea.

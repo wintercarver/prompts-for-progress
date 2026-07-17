@@ -1,0 +1,7 @@
+---
+{"schemaVersion":"0.1","id":"alphaproof-nexus","title":"AlphaProof Nexus searches open Erdős and OEIS problems","recordType":"campaign","domain":"mathematics","field":"formal mathematics","outcome":"mixed","contributionMode":"agentic search","summary":"A Lean-guided campaign reported nine Erdős results and 44 OEIS conjecture proofs, while also documenting failure modes such as restating the hard step behind a new unproved lemma.","people":["George Tsoukalas","AlphaProof Nexus collaborators"],"organizations":["Google DeepMind"],"systems":["AlphaProof Nexus","Gemini prover and rater agents","Lean"],"promptAvailability":"representative","timeline":[{"date":"2026-05-21","precision":"day","type":"preprint","label":"Formal-proof-search paper posted"}],"validation":[{"type":"formal","status":"passed","note":"Lean checks the formal statements; experts reportedly audited correspondence to the intended problems."}],"sources":[{"label":"Paper with agent prompts","url":"https://arxiv.org/abs/2605.22763","kind":"paper"},{"label":"Formal result repository","url":"https://github.com/google-deepmind/alphaproof-nexus-results","kind":"code"}],"caveat":"Results for stronger or related variants must not be counted as literal resolutions of the canonical problems; full per-run transcripts are unavailable."}
+---
+
+# AlphaProof Nexus searches open Erdős and OEIS problems
+
+The campaign illustrates why formal verification, statement fidelity, novelty, and mathematical significance must remain distinct fields.
