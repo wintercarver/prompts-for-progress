@@ -1,6 +1,6 @@
 # Contributing a record
 
-Start with the site's submission guidelines and use the short `Record submission` GitHub issue form once the repository is public. The problem, prompt, outcome, and your relationship to the attempt are enough to begin; maintainers can follow up for the rest.
+Start with the site's submission guidelines and use the short [`Record submission`](https://github.com/wintercarver/prompts-for-progress/issues/new?template=record-submission.yml) GitHub issue form. The problem, prompt, outcome, and your relationship to the attempt are enough to begin; maintainers can follow up for the rest.
 
 Do not submit confidential prompts, private transcripts, personal data, or copyrighted artifacts you do not have permission to share. Link to primary sources when mirroring rights are unclear.
 

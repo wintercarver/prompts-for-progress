@@ -43,7 +43,7 @@ export default function DataPage() {
         <div>
           <p className="eyebrow">Clone the repository</p>
           <h2 id="clone-title">One command, then local files.</h2>
-          <p>The repository will be available at this address when the public release is published.</p>
+          <p>The public repository contains the archive records and prompt artifacts cleared for redistribution.</p>
           <a href={repositoryUrl} target="_blank" rel="noreferrer">Open on GitHub ↗</a>
         </div>
         <pre><code>{cloneCommand}</code></pre>
