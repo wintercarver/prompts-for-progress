@@ -18,6 +18,8 @@ The format is intentionally permissive. Only `id`, `title`, `recordType`, `domai
 {
   "schemaVersion": "0.1",
   "id": "stable-kebab-case-id",
+  "problemIds": ["canonical-problem-id"],
+  "promptId": "optional-locally-preserved-prompt-id",
   "title": "Human-readable title",
   "recordType": "case | campaign | attempt",
   "domain": "mathematics | biology | chemistry | physics | ...",
@@ -52,6 +54,10 @@ The format is intentionally permissive. Only `id`, `title`, `recordType`, `domai
   "related": ["optional-related-record-id"]
 }
 ```
+
+`problemIds` links attempts to the enduring questions in `problems/`. `promptId` may explicitly link to a locally preserved artifact in `prompts/`. When it is omitted, the site also matches a prompt manifest whose `recordId` equals the record `id`. Neither mechanism replaces the primary source or rights metadata.
+
+Prompt manifests separately record `artifactType`, `completeness`, `rawSources`, `displayFiles`, rights status, and source hashes or commits. See `prompts/README.md` for the prompt-corpus format.
 
 ## Timeline interpretation
 

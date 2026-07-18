@@ -1,0 +1,7 @@
+---
+{"schemaVersion":"0.2","id":"sciexplorer-physics-models","recordId":"sciexplorer-physics-models","title":"SciExplorer physics-model discovery prompt and run","author":"Maximilian Nägele and Florian Marquardt","origin":"Public SciExplorer and SciExplorerResults repositories","sourceUrl":"https://github.com/MaxNaeg/SciExplorerResults","sourceCommit":"508a9bd4d9f815b52a70f5c5ce1a46de4bdacbe9","retrievedAt":"2026-07-17","originalFormat":"JSON run artifact","artifactType":"run-artifact","completeness":"representative","permissionBasis":"Redistribution under the repositories' MIT License, preserved with the local source bundle.","publicationStatus":"approved","transcriptionMode":"Verbatim run artifact from the cited repository commit. The site display extracts the exact prompt inputs; the machine-readable corpus retains the complete JSON run.","rawSources":["sources/sciexplorer-physics-models/all_2026-03-04_12-41-21.json"],"displayFiles":["sources/sciexplorer-physics-models/prompt-inputs.md"],"structure":["computational-physicist system prompt","hidden-coordinate research request","experiment tools","iterative hypotheses","final model submission"]}
+---
+
+# Prompt source bundle
+
+This representative complete run preserves the exact system message, initial research request, tool schema, intermediate messages, and final answer for one hidden-oscillator task. Additional public result files cover the other simulated systems.

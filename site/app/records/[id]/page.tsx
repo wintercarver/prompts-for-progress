@@ -5,6 +5,8 @@ import { records } from "../../records.generated";
 import {
   displayDate,
   humanize,
+  linkedProblems,
+  localPrompt,
   outcomeLabels,
   promptAccessLabel,
   promptSource,
@@ -38,6 +40,8 @@ export default async function RecordPage({ params }: RecordPageProps) {
 
   const record = records[recordIndex] as ArchiveRecord;
   const prompt = promptSource(record);
+  const mirroredPrompt = localPrompt(record);
+  const recordProblems = linkedProblems(record);
   const previous = records[(recordIndex - 1 + records.length) % records.length];
   const next = records[(recordIndex + 1) % records.length];
 
@@ -49,9 +53,11 @@ export default async function RecordPage({ params }: RecordPageProps) {
           <span>Prompts for Progress</span>
         </Link>
         <nav aria-label="Primary navigation">
-          <Link href="/#timeline">Timeline</Link>
           <Link href="/#records">Records</Link>
-          <Link href="/#method">Method</Link>
+          <Link href="/problems">Problems</Link>
+          <Link href="/data">Data</Link>
+          <Link href="/about">About</Link>
+          <Link href="/submit">Submit</Link>
         </nav>
       </header>
 
@@ -80,14 +86,18 @@ export default async function RecordPage({ params }: RecordPageProps) {
                 ? "No complete public prompt or transcript was located during the research pass."
                 : "The public source contains partial, representative, or method-level prompt material rather than a complete raw run."}
           </p>
-          {prompt ? (
+          {mirroredPrompt ? (
+            <a className="prompt-button" href="#full-prompt">
+              {promptAccessLabel(record)} <span aria-hidden="true">↓</span>
+            </a>
+          ) : prompt ? (
             <a className="prompt-button" href={prompt.url} target="_blank" rel="noreferrer">
               {promptAccessLabel(record)} <span aria-hidden="true">↗</span>
             </a>
           ) : (
             <span className="prompt-unavailable">Availability: {record.promptAvailability}</span>
           )}
-          {prompt && <small>Source: {prompt.label}</small>}
+          {mirroredPrompt ? <small>Locally preserved · source and rights status shown below</small> : prompt && <small>Source: {prompt.label}</small>}
         </aside>
       </section>
 
@@ -99,6 +109,52 @@ export default async function RecordPage({ params }: RecordPageProps) {
       </section>
 
       <div className="detail-content">
+        {mirroredPrompt && (
+          <section className="detail-section prompt-artifact-section" id="full-prompt">
+            <div>
+              <p className="eyebrow">Preserved artifact</p>
+              <p className={`artifact-state ${mirroredPrompt.publicationStatus}`}>
+                {mirroredPrompt.publicationStatus === "approved" ? "Approved to publish" : "Private · rights review pending"}
+              </p>
+            </div>
+            <div className="prompt-artifact">
+              <div className="prompt-artifact-heading">
+                <div>
+                  <h2>{"rawSources" in mirroredPrompt ? "Prompt corpus" : "Preserved prompt"}</h2>
+                  <p>{mirroredPrompt.title} · {mirroredPrompt.author}</p>
+                </div>
+                <a href={mirroredPrompt.sourceUrl} target="_blank" rel="noreferrer">Original source ↗</a>
+              </div>
+              <div className="prompt-structure" aria-label="Prompt structure">
+                {mirroredPrompt.structure.map((item) => <span key={item}>{item}</span>)}
+              </div>
+              <pre>{mirroredPrompt.body}</pre>
+              <dl className="artifact-provenance">
+                <div><dt>Retrieved</dt><dd>{mirroredPrompt.retrievedAt}</dd></div>
+                <div><dt>Original format</dt><dd>{mirroredPrompt.originalFormat}</dd></div>
+                {"completeness" in mirroredPrompt && <div><dt>Completeness</dt><dd>{mirroredPrompt.completeness}</dd></div>}
+                <div><dt>Transcription</dt><dd>{"transcriptionMode" in mirroredPrompt ? mirroredPrompt.transcriptionMode : "Verbatim author-provided text"}</dd></div>
+                <div><dt>Permission basis</dt><dd>{mirroredPrompt.permissionBasis}</dd></div>
+              </dl>
+            </div>
+          </section>
+        )}
+
+        {recordProblems.length > 0 && (
+          <section className="detail-section related-problems-section">
+            <p className="eyebrow">Research target</p>
+            <div className="related-problems">
+              {recordProblems.map((problem) => (
+                <Link key={problem.id} href={`/problems/${problem.id}`}>
+                  <span>{problem.statusLabel}</span>
+                  <strong>{problem.title}</strong>
+                  <small>{problem.summary}</small>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         <section className="detail-section detail-context">
           <p className="eyebrow">Editorial context</p>
           <h2>What happened</h2>

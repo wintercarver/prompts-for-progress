@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { records } from "./records.generated";
+import Link from "next/link";
+import { problems, prompts, records } from "./records.generated";
 import {
   displayDate,
   outcomeLabels,
@@ -43,13 +44,7 @@ export default function Home() {
   const maxYear = Math.max(...yearly.map((item) => item.total), 1);
 
   const completeCount = publicRecords.filter((record) => record.outcome === "complete").length;
-  const mixedCount = publicRecords.filter((record) => record.outcome === "mixed").length;
-  const promptCount = publicRecords.filter((record) =>
-    ["full", "representative"].includes(record.promptAvailability),
-  ).length;
-  const verifiedCount = publicRecords.filter((record) =>
-    record.validation.some((item) => ["formal", "wet-lab", "peer-review"].includes(item.type)),
-  ).length;
+  const documentedAttemptCount = publicRecords.filter((record) => record.outcome === "unsuccessful").length;
 
   return (
     <main>
@@ -61,28 +56,51 @@ export default function Home() {
         <nav aria-label="Primary navigation">
           <a href="#timeline">Timeline</a>
           <a href="#records">Records</a>
-          <a href="#method">Method</a>
+          <Link href="/problems">Problems</Link>
+          <Link href="/data">Data</Link>
+          <Link href="/about">About</Link>
         </nav>
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow">A public ledger of AI-assisted research</p>
-        <h1>What happens between the prompt and the progress?</h1>
+        <p className="eyebrow">AI-assisted research in mathematics and the sciences</p>
+        <h1>An archive of attempts to solve research problems with AI.</h1>
         <p className="hero-copy">
-          A provenance-focused archive of attempts to use AI systems on research-level mathematical and scientific questions—successful, partial, mixed, disputed, and unsuccessful.
+          AI-assisted research is accelerating, but its prompts, methods, and outcomes are scattered. Prompts for Progress collects them in context so researchers can study how the work is being done, learn from prior attempts, and plan better-informed work of their own.
         </p>
-        <div className="hero-note">
-          <span className="pulse" aria-hidden="true" />
-          Private prototype · Research cutoff July 16, 2026
+        <div className="hero-meta">
+          <div className="hero-note">
+            <span className="pulse" aria-hidden="true" />
+            Private prototype · Research cutoff July 16, 2026
+          </div>
+          <a className="hero-browse" href="#records">Browse prompts and attempts <span aria-hidden="true">↓</span></a>
         </div>
       </section>
 
       <section className="stats" aria-label="Archive summary">
         <article><strong>{publicRecords.length}</strong><span>documented records</span></article>
+        <article><strong>{problems.length}</strong><span>tracked problems and collections</span></article>
         <article><strong>{completeCount}</strong><span>complete reported results</span></article>
-        <article><strong>{mixedCount}</strong><span>mixed-outcome campaigns</span></article>
-        <article><strong>{promptCount}</strong><span>full or representative prompts</span></article>
-        <article><strong>{verifiedCount}</strong><span>formal, experimental, or peer-reviewed</span></article>
+        <article><strong>{documentedAttemptCount}</strong><span>documented attempts without a result</span></article>
+        <article><strong>{prompts.length}</strong><span>locally preserved full prompts</span></article>
+      </section>
+
+      <section className="data-callout">
+        <div>
+          <p className="eyebrow">Use the complete archive</p>
+          <h2>Clone the repository and work with every prompt at once.</h2>
+        </div>
+        <pre><code>git clone https://github.com/wintercarver/prompts-for-progress.git</code></pre>
+        <Link href="/data">Work with the data <span>→</span></Link>
+      </section>
+
+      <section className="problems-callout">
+        <div>
+          <p className="eyebrow">Problems, not just announcements</p>
+          <h2>Follow one question across every attempt.</h2>
+        </div>
+        <p>Use the problems index to see which approaches have been tried on a question and how their outcomes differ.</p>
+        <Link href="/problems">Open problems index <span>→</span></Link>
       </section>
 
       <section className="timeline-section" id="timeline">
@@ -92,7 +110,7 @@ export default function Home() {
             <h2>The public record is accelerating.</h2>
           </div>
           <p>
-            Records are placed by known run date when available, otherwise by their first dated public event. Counts reflect this archive—not all AI-assisted research.
+            The timeline shows documented activity using the known run date when available, otherwise the first dated public event. Counts reflect this archive rather than all AI-assisted research.
           </p>
         </div>
 
@@ -149,9 +167,9 @@ export default function Home() {
         <div className="section-heading records-heading">
           <div>
             <p className="eyebrow">Seed corpus</p>
-            <h2>Inspect the attempts, not just the announcements.</h2>
+            <h2>Study the prompts, methods, and outcomes together.</h2>
           </div>
-          <p>{filtered.length} of {publicRecords.length} records shown</p>
+          <p>Browse {filtered.length} of {publicRecords.length} records. Each full record keeps the prompt close to its context and evidence.</p>
         </div>
 
         <div className="filters" aria-label="Filter records">
@@ -199,19 +217,25 @@ export default function Home() {
       </section>
 
       <section className="method" id="method">
-        <p className="eyebrow">Method before leaderboard</p>
-        <h2>Outcome is not evidence. Publication is not a run date. Formalization is not novelty.</h2>
+        <p className="eyebrow">About the archive</p>
+        <h2>A reference set of research problems, prompts, attempts, and outcomes.</h2>
         <div>
-          <p>Each record separates the research claim, the AI and human roles, prompt availability, timeline events, and changing forms of validation.</p>
-          <p>Campaign records preserve the denominator: failed outputs, vacuous readings, rediscoveries, rejected hypotheses, and corrections remain part of the evidence.</p>
-          <p>The schema is provisional and will be revised after a larger corpus. Source links remain primary; prompt text is mirrored only after rights review.</p>
+          <p>Each record brings together the problem targeted, the prompt or workflow, the reported outcome, contributors, dates, source material, and available validation. Together, they make it easier to compare how researchers frame problems, direct AI systems, judge outputs, and report unsuccessful attempts.</p>
+          <p>The collection includes successes, partial progress, disputed claims, rediscoveries, and documented attempts that produced no result.</p>
+          <p>The metadata remains provisional while the corpus grows. Primary sources stay linked, and prompt text is mirrored only when permission or licensing allows it.</p>
         </div>
+      </section>
+
+      <section className="submission-cta">
+        <p className="eyebrow">Contribute a record</p>
+        <h2>Know of another documented problem, prompt, and outcome?</h2>
+        <Link className="primary-action" href="/submit">Submission guidelines <span>→</span></Link>
       </section>
 
       <footer>
         <span>Prompts for Progress</span>
         <p>Documenting how AI-assisted research actually happens.</p>
-        <a href="#top">Back to top ↑</a>
+        <Link href="/about">About the project →</Link>
       </footer>
     </main>
   );

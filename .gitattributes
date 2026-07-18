@@ -1,0 +1,2 @@
+# Mirrored research artifacts are preserved verbatim, including source whitespace.
+prompts/sources/** -whitespace

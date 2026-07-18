@@ -1,0 +1,140 @@
+name: Record submission
+description: Share a documented AI-assisted research attempt for possible inclusion.
+title: "[Submission]: "
+labels:
+  - submission:pending
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. Start with the problem, the prompt, and what happened; we can follow up on the remaining metadata. Please do not post confidential information or material you do not have permission to share.
+  - type: input
+    id: problem
+    attributes:
+      label: Problem or research question
+      description: Use the familiar or canonical name when one exists.
+    validations:
+      required: true
+  - type: input
+    id: problem_source
+    attributes:
+      label: Problem reference (optional)
+      description: Optional link to a problem statement, paper, benchmark, or other useful reference.
+    validations:
+      required: false
+  - type: input
+    id: attempt_date
+    attributes:
+      label: Attempt date or date range (optional)
+      description: Exact or approximate dates are both useful.
+      placeholder: YYYY-MM-DD, YYYY-MM, or an approximation
+    validations:
+      required: false
+  - type: input
+    id: model
+    attributes:
+      label: AI model or system (optional)
+      description: Include the product, model, or agent framework if known.
+    validations:
+      required: false
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration, tools, and duration (optional)
+      description: Agent setup, tools, compute or run duration, settings, and anything else needed to understand the attempt.
+    validations:
+      required: false
+  - type: dropdown
+    id: prompt_availability
+    attributes:
+      label: Prompt availability
+      options:
+        - Full prompt is included below
+        - Full prompt is linked publicly
+        - Partial or representative prompt only
+        - Prompt cannot be shared
+        - Prompt availability is unknown
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt or prompt link
+      description: Paste the prompt, link to it, or describe what prompt material is available. Share only material you may publish.
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome_category
+    attributes:
+      label: Closest outcome category
+      options:
+        - Complete result claimed
+        - Partial progress
+        - Mixed campaign
+        - Documented attempt without a result
+        - Rediscovery
+        - Disputed or corrected claim
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What happened?
+      description: Briefly describe the result, partial progress, rediscovery, disputed claim, or attempt that produced no result.
+    validations:
+      required: true
+  - type: textarea
+    id: success_criterion
+    attributes:
+      label: Success criterion (optional)
+      description: What would have counted as success for this attempt?
+    validations:
+      required: false
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Supporting links or artifacts
+      description: Optional links to a response, transcript, proof, code, experiment, paper, announcement, correction, or other useful material.
+    validations:
+      required: false
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and uncertainties (optional)
+      description: Formal checking, expert review, experiments, replication, peer review, disputes, missing information, or the absence of validation.
+    validations:
+      required: false
+  - type: textarea
+    id: attribution
+    attributes:
+      label: People, organizations, and roles (optional)
+      description: Credit problem selection, prompting, operation, research contribution, verification, experimentation, formalization, or writing where known.
+    validations:
+      required: false
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Your relationship to the attempt
+      options:
+        - I ran or participated in it
+        - I am an author or verifier
+        - I am documenting public work by others
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred follow-up (optional)
+      description: Your GitHub account is sufficient. Optionally provide another public contact method; do not post private contact details.
+    validations:
+      required: false
+  - type: checkboxes
+    id: permissions
+    attributes:
+      label: Sharing and review
+      options:
+        - label: I have not included confidential information or private personal data.
+          required: true
+        - label: I understand the maintainers may follow up, edit wording, link rather than mirror artifacts, or decide that the submission is outside the archive's developing scope.
+          required: true

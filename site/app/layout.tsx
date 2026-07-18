@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Prompts for Progress",
   description:
-    "A provenance-focused archive of attempts to use AI systems for mathematical and scientific research progress.",
+    "An archive of attempts to use AI systems to solve research problems in mathematics and the sciences.",
   openGraph: {
     title: "Prompts for Progress",
     description: "Documenting how AI-assisted research actually happens.",

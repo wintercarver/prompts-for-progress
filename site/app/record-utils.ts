@@ -1,6 +1,11 @@
-import { records } from "./records.generated";
+import { problems, prompts, records } from "./records.generated";
 
-export type ArchiveRecord = (typeof records)[number];
+export type ArchiveRecord = (typeof records)[number] & {
+  problemIds?: readonly string[];
+  promptId?: string;
+};
+export type ArchiveProblem = (typeof problems)[number];
+export type PromptArtifact = (typeof prompts)[number];
 
 export const outcomeLabels: Record<string, string> = {
   complete: "Complete result",
@@ -56,11 +61,31 @@ export function promptSource(record: ArchiveRecord) {
 }
 
 export function promptAccessLabel(record: ArchiveRecord) {
-  if (record.promptAvailability === "full") return "Open raw prompt";
+  const preserved = localPrompt(record);
+  if (preserved) {
+    if ("completeness" in preserved && preserved.completeness === "exact") return "Read full prompt";
+    if ("rawSources" in preserved) return "Read prompt corpus";
+    return record.promptAvailability === "full" ? "Read full prompt" : "Read available prompt material";
+  }
+  if (record.promptAvailability === "full") return "View prompt source";
   if (record.promptAvailability === "representative") return "Open representative prompts";
   if (record.promptAvailability === "partial") return "Open available prompt material";
   if (record.promptAvailability === "linked") return "Open linked prompt";
   return "Prompt not publicly preserved";
+}
+
+export function localPrompt(record: ArchiveRecord) {
+  return (prompts as readonly PromptArtifact[]).find(
+    (prompt) =>
+      (!("contentAvailable" in prompt) || prompt.contentAvailable !== false) &&
+      (prompt.id === record.promptId || prompt.recordId === record.id),
+  );
+}
+
+export function linkedProblems(record: ArchiveRecord) {
+  return (problems as readonly ArchiveProblem[]).filter((problem) =>
+    record.problemIds?.includes(problem.id),
+  );
 }
 
 export function humanize(value: string) {

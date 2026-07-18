@@ -14,7 +14,12 @@ Private research phase. The initial corpus is being collected in deliberately li
 - `research/candidates/`: raw candidate capture and triage
 - `research/synthesis/`: cross-case analysis and schema notes
 - `records/`: vetted public records (added after research review)
-- `prompts/`: prompt artifacts that may be lawfully mirrored
+- `problems/`: canonical research problems and collections linked to attempts
+- `prompts/`: prompt manifests, source bundles, and the generated aggregate corpus
 - `site/`: static site (added after the first approximately ten records)
 
 See [PROJECT_CHARTER.md](PROJECT_CHARTER.md) for scope and principles.
+
+The prompt corpus is generated as `prompts/corpus.jsonl` plus `prompts/corpus-index.json`. See [prompts/README.md](prompts/README.md) for completeness and rights labels.
+
+Submission intake is designed around structured GitHub issues, agent-assisted evidence triage, and a human-controlled pull-request publication boundary. See [SUBMISSION_WORKFLOW.md](SUBMISSION_WORKFLOW.md).

@@ -1,0 +1,7 @@
+---
+{"schemaVersion":"0.2","id":"funsearch-cap-sets","recordId":"funsearch-cap-sets","title":"FunSearch cap-set program prompt scaffold","author":"Google DeepMind FunSearch collaborators","origin":"Public FunSearch repository","sourceUrl":"https://github.com/google-deepmind/funsearch","sourceCommit":"cc53f274237d7ab05c19df939edbc1f9616a7c19","retrievedAt":"2026-07-17","originalFormat":"Jupyter notebook and Python source files","artifactType":"program-scaffold","completeness":"representative","permissionBasis":"Software is redistributed under Apache-2.0 and repository materials under CC BY 4.0, with the original license notice preserved.","publicationStatus":"approved","transcriptionMode":"Verbatim source files from the cited repository commit.","rawSources":["sources/funsearch-cap-sets/cap_set.ipynb","sources/funsearch-cap-sets/sampler.py","sources/funsearch-cap-sets/programs_database.py"],"displayFiles":["sources/funsearch-cap-sets/sampler.py","sources/funsearch-cap-sets/programs_database.py"],"structure":["executable problem scaffold","evaluator","evolving candidate functions","versioned exemplars","code-completion request"]}
+---
+
+# Prompt source bundle
+
+FunSearch does not use one stable prose prompt. It builds code-completion prompts from a problem scaffold and evolving high-scoring programs. The bundle preserves the cap-set notebook and the code that constructs each prompt.

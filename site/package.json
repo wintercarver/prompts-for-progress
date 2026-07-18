@@ -6,7 +6,8 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "records:generate": "node scripts/generate-records.mjs",
+    "prompts:generate": "node scripts/generate-prompt-corpus.mjs",
+    "records:generate": "npm run prompts:generate && node scripts/generate-records.mjs",
     "predev": "npm run records:generate",
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
     "prebuild": "npm run records:generate",
