@@ -192,7 +192,7 @@ export default function Home() {
         <div className="record-grid">
           {filtered.map((record, index) => (
             <article className="record-card" key={record.id}>
-              <a className="card-link" href={`/records/${record.id}`} aria-label={`View full record: ${record.title}`} />
+              <Link className="card-link" href={`/records/${record.id}`} aria-label={`View full record: ${record.title}`} />
               <div className="card-index">{String(index + 1).padStart(2, "0")}</div>
               <div className="card-meta">
                 <span className={`status-pill outcome-${record.outcome}`}>{outcomeLabels[record.outcome]}</span>

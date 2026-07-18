@@ -46,7 +46,7 @@ export function displayDate(date: string) {
 }
 
 export function promptSource(record: ArchiveRecord) {
-  if (record.promptAvailability === "unavailable" || record.promptAvailability === "unknown") {
+  if (record.promptAvailability === "unavailable") {
     return undefined;
   }
 
@@ -70,7 +70,6 @@ export function promptAccessLabel(record: ArchiveRecord) {
   if (record.promptAvailability === "full") return "View prompt source";
   if (record.promptAvailability === "representative") return "Open representative prompts";
   if (record.promptAvailability === "partial") return "Open available prompt material";
-  if (record.promptAvailability === "linked") return "Open linked prompt";
   return "Prompt not publicly preserved";
 }
 
