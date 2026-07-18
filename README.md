@@ -13,6 +13,7 @@ Private research phase. The initial corpus is being collected in deliberately li
 - `research/search-log/`: queries, sources, dates, and search coverage
 - `research/candidates/`: raw candidate capture and triage
 - `research/synthesis/`: cross-case analysis and schema notes
+- `playbooks/`: reusable, slow-changing research procedures (not corpus prompts or run records)
 - `records/`: vetted public records (added after research review)
 - `problems/`: canonical research problems and collections linked to attempts
 - `prompts/`: prompt manifests, source bundles, and the generated aggregate corpus
