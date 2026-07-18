@@ -23,15 +23,12 @@ The most valuable cross-domain transfers are:
 
 The archive also exposes methods that are absent from many cases or inconsistently operationalized: held-out validation, blinded independent verification, source-locked theorem or evidence cards, explicit uncertainty and abstention, symmetric proof/disproof search, negative-result memory, verification-preserving repair, calibrated controls, and prompt ablations.
 
-After screening all 23 top-level problem files, this project selects one primary follow-up: construct a cap set of at least 513 points in \(\mathbb F_3^8\), improving the archive's explicit 512-point baseline. The result is unambiguous, checkable in seconds with two standard-library Python implementations, and requires no external data, live service, laboratory, or specialized infrastructure. A complete standalone prompt is supplied in a separate document.
-
 ## 1. Research questions
 
-This study addresses three questions:
+This study addresses two questions:
 
 1. Which prompting and orchestration styles are distinctive among the domains represented in the archive, and which have plausible transfer value elsewhere?
 2. Which generally promising research methods are absent, underused, or incompletely enforced in prior attempts?
-3. Which archived open problem can be converted into a self-contained prompt with an objectively verifiable outcome and no new data or specialized infrastructure?
 
 “Distinctive” means visibly emphasized in this corpus, not globally unique to the domain. “Promising” means there is a concrete mechanism by which the method could improve specification, search, or verification. It does not mean the corpus establishes causal effectiveness.
 
@@ -250,56 +247,7 @@ The strongest caution is the CDC-style contrast. The Bartnik attempt used a deta
 
 The study therefore recommends methods because they make research state more checkable, falsifiable, persistent, or efficiently searchable—not because their presence correlates with the archive's `complete` label.
 
-## 7. Archived-problem screening
-
-### 7.1 Screening criteria
-
-All 23 top-level problem files were screened; collection records were not exhaustively decomposed into every possible child problem. The criteria were:
-
-- a statement that can be made exact in the prompt;
-- a result that can be checked independently;
-- no missing dataset, attachment, or experimental input;
-- no live platform, laboratory instrument, proprietary software, or specialized compute requirement;
-- a meaningful new attempt relative to the preserved prior workflow.
-
-### 7.2 Results
-
-Under the stated screen, two top-level candidates survived:
-
-| Candidate | Definition | Verification | Assets/infrastructure | Decision |
-|---|---|---|---|---|
-| Improved cap set in \(\mathbb F_3^8\) | Exact finite construction target | Deterministic certificate checker | Standard-library Python only | **Selected** |
-| Bartnik admissible-extension conjecture | Exact universal theorem | Expert proof audit | No data or platform | Secondary only: verification is expert-intensive and prior prompt already covered broad orchestration |
-
-The remaining top-level files were excluded for one or more of four reasons:
-
-- the problem is recorded as claimed resolved or disproved;
-- it is a collection or benchmark without a statement-level child target;
-- it requires external datasets, notebooks, simulators, or a mutable live verifier;
-- it requires wet-lab experiments or specialized instruments.
-
-Examples include Atlantic Niño forecasting (climate datasets and hindcasts), AFM automation (instrument), nanobody and drug-combination design (biological assets and wet lab), ACRA synthesis (papers, chemistry stack, and robot), BixBench (hosted notebook/data capsules), SciExplorer (controlled simulator), and EinsteinArena (live platform and changing verifier).
-
-### 7.3 Selected challenge
-
-Let \(\mathbb F_3^8=\{0,1,2\}^8\) with coordinatewise arithmetic modulo 3. A cap set is a subset with no three distinct points \(x,y,z\) satisfying \(x+y+z=0\). The repository preserves an explicit cap set of size 512 and an \(O(|S|^2 n)\) checker. The new target is:
-
-> Produce a deterministic generator for a valid cap set \(S\subseteq\mathbb F_3^8\) with \(|S|\ge 513\).
-
-This target is an archive-relative improvement. Mathematical validity and improvement over the preserved baseline are objective. A current literature/prior-art check is still required before claiming global novelty in 2026.
-
-The standalone prompt embeds:
-
-- the exact definition and honest claim boundary;
-- the complete archived 512-point generator, so no file lookup is needed;
-- a standard-library verifier and deterministic hash;
-- mechanism-diverse search branches;
-- a route registry and negative-result memory;
-- decisive tests and control and calibration requirements;
-- a separately implemented checker and precommitted affine metamorphic tests;
-- a useful fallback if 513 is not reached.
-
-## 8. Recommended general research-prompt architecture
+## 7. Implications for research-prompt design
 
 For future repository experiments, use the following architecture:
 
@@ -315,43 +263,13 @@ For future repository experiments, use the following architecture:
 10. **Minimal repair and full recheck.** Map defects to claims, repair locally, then rerun all gates.
 11. **Resource-aware stopping.** If unresolved, return the strongest checked artifact, the exact remaining obstruction, failed-route memory, and reproducible next experiments. Never manufacture completion.
 
-## 9. Limitations and next research
+## 8. Limitations and next research
 
 This is a small, heterogeneous, historically selected archive. Mathematics is overrepresented; several cases have partial or representative prompts; private-rights-review materials are excluded from the generated public corpus; exact model settings, compute, system prompts, or human interventions are sometimes unknown. Prompt availability is not the same as run reproducibility.
 
 The next study should convert the qualitative matrix into a stage-level dataset with two independent coders, adjudicated disagreements, and inter-rater reliability. A subsequent experiment should test a small number of mechanisms—such as ambiguity audit, decisive-test card, external verifier, and negative-result memory—on matched verifier-backed tasks while holding the model, tools, budget, and scoring constant. That is the point at which the project could begin making comparative effectiveness claims.
 
-## Appendix A. Top-level problem screening log
-
-This log makes the selection decision auditable at the level actually screened. “Excluded” does not mean scientifically unimportant; it means the file did not meet this experiment's conjunction of exact definition, realistic verification, no new data assets, and no specialized infrastructure.
-
-| Top-level problem file | Screen | Principal reason |
-|---|---|---|
-| `astrobiology-mass-spectrometry-hypotheses` | Excluded | Depends on observational mass-spectrometry data and literature context |
-| `atlantic-nino-forecast-skill` | Excluded | Requires climate datasets, hindcasts, temporal splits, and model training |
-| `atomic-force-microscopy-automation` | Excluded | Requires an AFM instrument and privileged control stack |
-| `autonomous-ml-research-pipeline` | Excluded | Requires task datasets, training compute, and experiment infrastructure |
-| `bartnik-admissible-extension` | Secondary | Exact and asset-free, but a claimed proof needs specialist geometric-analysis review |
-| `bioinformatics-research-benchmark` | Excluded | Benchmark child tasks depend on external notebooks and data capsules |
-| `breast-cancer-drug-combinations` | Excluded | Requires biological models and wet-lab validation |
-| `cap-set-constructions` | **Selected** | Exact finite certificate; two ordinary-Python checkers; archive-relative target |
-| `cycle-double-cover` | Excluded | Repository records a claimed resolution; new verification is expert-intensive |
-| `dry-amd-drug-repurposing` | Excluded | Requires literature corpus, biological assays, and later experiments |
-| `einsteinarena-optimization-problems` | Excluded | Collection depends on a mutable live platform and executable verifiers |
-| `erdos-848` | Excluded | Repository records a completed result and later manuscript development |
-| `erdos-open-problems` | Excluded | Collection file; child statements were not decomposed under this screen |
-| `first-proof-benchmark` | Excluded | Benchmark collection rather than one selected self-contained target |
-| `lithium-halide-spinel-optimization` | Excluded | Requires synthesis, characterization, and battery-materials laboratory work |
-| `nesterov-point-convergence` | Excluded | Repository records a completed result; full prompt sequence is unavailable |
-| `oeis-open-problems` | Excluded | Collection file; child statements were not decomposed under this screen |
-| `planar-unit-distance-conjecture` | Excluded | Repository records a claimed resolution; proof verification is expert-intensive |
-| `sars-cov-2-nanobody-design` | Excluded | Requires sequence/model assets and wet-lab validation |
-| `simulated-physics-model-discovery` | Excluded | Requires the controlled simulator used by the benchmark |
-| `synthesis-procedure-reproducibility` | Excluded | Requires source papers, chemistry software/robot stack, and laboratory confirmation |
-| `weighted-difference-quotient-ode-uniqueness` | Excluded | Repository records a counterexample and completed preprint pathway |
-| `zeroth-order-convex-lower-bound` | Excluded | Repository records a completed proof and Lean formalization |
-
-## Appendix B. Principal repository evidence
+## Appendix A. Principal repository evidence
 
 - Corpus scope and completeness: `prompts/README.md`, `prompts/corpus-index.json`, `research/README.md`.
 - Mathematics contracts: `prompts/cycle-double-cover.md`, `prompts/bartnik-admissible-extension.md`, `prompts/unit-distance-conjecture.md`, `prompts/sources/zeroth-order-convex-lower-bound/initial-prompt.txt`.
@@ -365,7 +283,7 @@ This log makes the selection decision auditable at the level actually screened. 
 - Instrument routing and failure logs: `prompts/sources/aila-afmbench/`.
 - Hypothesis orchestration: `prompts/sources/astroagents-hypothesis-campaign/`.
 
-## Appendix C. Claim language for later publication
+## Appendix B. Claim language for later publication
 
 Prefer:
 
