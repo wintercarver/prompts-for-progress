@@ -27,6 +27,7 @@ export default function SubmitPage() {
           <Link href="/#records">Records</Link>
           <Link href="/problems">Problems</Link>
           <Link href="/data">Data</Link>
+          <Link className="nav-cta" href="/feeling-lucky">Feeling lucky</Link>
           <Link href="/about">About</Link>
           <Link href="/submit">Submit</Link>
         </nav>
