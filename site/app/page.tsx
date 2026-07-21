@@ -66,8 +66,13 @@ export default function Home() {
         <p className="eyebrow">AI-assisted research in mathematics and the sciences</p>
         <h1>An archive of attempts to solve research problems with AI.</h1>
         <p className="hero-copy">
-          AI-assisted research is accelerating, but its prompts, methods, and outcomes are scattered. Prompts for Progress collects them in context so researchers can study how the work is being done, learn from prior attempts, and plan better-informed work of their own.
+          Prompts for Progress collects documented research attempts and the prompts behind them, so researchers can inspect how the work was done, compare approaches, and work with the corpus in their own agent workflows.
         </p>
+        <Link className="hero-feature" href="/records/openai-jacobian-conjecture#full-prompt" aria-label="Read the OpenAI prompt for the Jacobian Conjecture counterexample">
+          <span className="hero-feature-label">Recent addition</span>
+          <span className="hero-feature-copy">Jacobian Conjecture counterexample · Complete result · Read the OpenAI prompt</span>
+          <span className="hero-feature-arrow" aria-hidden="true">→</span>
+        </Link>
         <div className="hero-meta">
           <div className="hero-note">
             <span className="pulse" aria-hidden="true" />
