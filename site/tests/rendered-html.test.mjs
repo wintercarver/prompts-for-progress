@@ -174,6 +174,23 @@ test("problem and submission routes explain the archive workflow", async () => {
   assert.doesNotMatch(submitHtml, /not an open publishing platform/i);
 });
 
+test("Feeling Lucky prepares an agent-guided research prompt package", async () => {
+  const response = await renderPath("/feeling-lucky/");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Feeling lucky/);
+  assert.match(html, /taking an informed swing/);
+  assert.match(html, /playbooks\/problem-selection-and-prompt-design\.md/);
+  assert.match(html, /DESIGN FOR THE PRESELECTED PROBLEM/);
+  assert.match(html, /SCREEN THE ARCHIVE FOR A PROBLEM/);
+  assert.match(html, /system-prompt\.md/);
+  assert.match(html, /validation-plan\.md/);
+  assert.match(html, /Do not start the research run yet/);
+  assert.match(html, /not a promise that one will win/);
+  assert.match(html, /href="\/submit"/);
+});
+
 test("generated data comes from Markdown records, problems, and prompts", async () => {
   const [generated, page, packageJson, corpusIndexSource, corpusSource, favicon] = await Promise.all([
     readFile(new URL("../app/records.generated.ts", import.meta.url), "utf8"),
