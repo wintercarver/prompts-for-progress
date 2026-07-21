@@ -45,6 +45,11 @@ nav a:hover { color: var(--forest); }
 h1 { margin: 0; max-width: 1050px; font-size: clamp(56px, 8.2vw, 128px); line-height: 0.88; letter-spacing: -0.075em; font-weight: 560; }
 .hero h1 { max-width: 980px; font-size: clamp(44px, 5.4vw, 78px); line-height: .98; letter-spacing: -.055em; }
 .hero-copy { max-width: 760px; margin: 36px 0 24px 26vw; font-size: clamp(20px, 2.2vw, 31px); line-height: 1.32; letter-spacing: -0.03em; }
+.hero-feature { max-width: 760px; margin: 0 0 24px 26vw; padding: 14px 0; display: grid; grid-template-columns: 128px minmax(0, 1fr) auto; align-items: baseline; gap: 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.hero-feature:hover { color: var(--forest); }
+.hero-feature-label { color: var(--forest); font: 650 10px/1.2 var(--font-geist-mono); text-transform: uppercase; letter-spacing: .1em; }
+.hero-feature-copy { font-size: 14px; line-height: 1.4; letter-spacing: -.01em; }
+.hero-feature-arrow { color: var(--forest); font-size: 19px; line-height: 1; }
 .hero-meta { max-width: 760px; margin-left: 26vw; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .hero-note { display: flex; align-items: center; gap: 10px; color: var(--muted); font: 13px var(--font-geist-mono); }
 .hero-browse { padding-bottom: 5px; border-bottom: 1px solid var(--forest); color: var(--forest); text-decoration: none; font: 650 11px var(--font-geist-mono); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
@@ -387,7 +392,9 @@ footer a { font-size: 12px; }
   nav { display: none; }
   .hero, .timeline-section, .records-section, .method { padding-left: 20px; padding-right: 20px; }
   h1 { font-size: clamp(52px, 17vw, 78px); }
-  .hero-copy, .hero-meta { margin-left: 0; }
+  .hero-copy, .hero-feature, .hero-meta { margin-left: 0; }
+  .hero-feature { grid-template-columns: 1fr auto; gap: 8px 14px; }
+  .hero-feature-label { grid-column: 1 / -1; }
   .hero-meta { align-items: flex-start; flex-direction: column; }
   .stats { grid-template-columns: 1fr 1fr; }
   .stats article { min-height: 140px; padding: 22px 20px; }

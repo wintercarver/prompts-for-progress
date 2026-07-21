@@ -34,8 +34,11 @@ test("server-renders the archive home page", async () => {
   const html = await response.text();
   assert.match(html, /<title>Prompts for Progress<\/title>/i);
   assert.match(html, /An archive of attempts to solve research problems with AI/);
-  assert.match(html, /prompts, methods, and outcomes are scattered/);
-  assert.match(html, /researchers can study how the work is being done/);
+  assert.match(html, /documented research attempts and the prompts behind them/);
+  assert.match(html, /work with the corpus in their own agent workflows/);
+  assert.match(html, /Recent addition/);
+  assert.match(html, /Jacobian Conjecture counterexample/);
+  assert.match(html, /href="\/records\/openai-jacobian-conjecture\/#full-prompt"/);
   assert.match(html, /Browse prompts and attempts/);
   assert.match(html, /href="#records"/);
   assert.doesNotMatch(html, /What happens between the prompt and the progress\?/);
