@@ -71,7 +71,7 @@ export default function Home() {
         <div className="hero-meta">
           <div className="hero-note">
             <span className="pulse" aria-hidden="true" />
-            Private prototype · Research cutoff July 16, 2026
+            Private prototype · Research cutoff July 20, 2026
           </div>
           <a className="hero-browse" href="#records">Browse prompts and attempts <span aria-hidden="true">↓</span></a>
         </div>

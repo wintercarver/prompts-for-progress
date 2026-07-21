@@ -1,4 +1,5 @@
 .DS_Store
+AGENTS.md
 .env
 .env.*
 local-research/
@@ -20,6 +21,7 @@ prompts/*.md
 !prompts/futurehouse-robin-amd.md
 !prompts/gpt4-breast-cancer-drug-pairs.md
 !prompts/nesterov-point-convergence.md
+!prompts/openai-jacobian-conjecture.md
 !prompts/sciexplorer-physics-models.md
 !prompts/virtual-lab-nanobodies.md
 
@@ -34,6 +36,8 @@ prompts/sources/*
 !prompts/sources/bixbench-trajectories/**
 !prompts/sources/funsearch-cap-sets/
 !prompts/sources/funsearch-cap-sets/**
+!prompts/sources/openai-jacobian-conjecture/
+!prompts/sources/openai-jacobian-conjecture/**
 !prompts/sources/futurehouse-robin-amd/
 !prompts/sources/futurehouse-robin-amd/**
 !prompts/sources/gpt4-breast-cancer-drug-pairs/
