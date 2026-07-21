@@ -1266,7 +1266,7 @@ export const records = [
     "sources": [
       {
         "label": "Levent Alpöge's original counterexample announcement",
-        "url": "https://x.com/alpoge/status/2079028340955197566",
+        "url": "https://x.com/__alpoge__/status/2079028340955197566",
         "kind": "announcement"
       },
       {
