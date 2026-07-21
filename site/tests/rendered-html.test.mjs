@@ -40,7 +40,7 @@ test("server-renders the archive home page", async () => {
   assert.match(html, /href="#records"/);
   assert.doesNotMatch(html, /What happens between the prompt and the progress\?/);
   assert.match(html, /The public record is accelerating\./);
-  assert.match(html, /23<\/strong><span>documented records/);
+  assert.match(html, /24<\/strong><span>documented records/);
   assert.match(html, /A reference set of research problems, prompts, attempts, and outcomes/);
   assert.match(html, /Clone the repository and work with every prompt at once/);
   assert.match(html, /git clone https:\/\/github\.com\/wintercarver\/prompts-for-progress\.git/);
@@ -194,10 +194,11 @@ test("generated data comes from Markdown records, problems, and prompts", async 
   assert.match(page, /from "\.\/records\.generated"/);
   assert.match(packageJson, /"prebuild": "npm run records:generate"/);
   assert.match(packageJson, /"prompts:generate": "node scripts\/generate-prompt-corpus\.mjs"/);
-  assert.equal(corpusIndex.length, 12);
-  assert.equal(corpusRows.length, 131);
+  assert.equal(corpusIndex.length, 13);
+  assert.equal(corpusRows.length, 132);
   assert.ok(corpusRows.some((row) => row.recordId === "bartnik-admissible-extension-attempt" && row.content.includes("Resolve the Bartnik admissible-extension conjecture completely")));
   assert.ok(corpusRows.some((row) => row.recordId === "gpt4-breast-cancer-drug-pairs" && row.content.includes("selectively target MCF7")));
+  assert.ok(corpusRows.some((row) => row.recordId === "openai-jacobian-conjecture" && row.content.includes("Resolve the Jacobian Conjecture completely")));
   assert.ok(!corpusRows.some((row) => row.recordId === "zeroth-order-convex-lower-bound"));
   assert.deepEqual(
     corpusIndex.filter((entry) => entry.contentAvailable === false).map((entry) => entry.recordId).sort(),

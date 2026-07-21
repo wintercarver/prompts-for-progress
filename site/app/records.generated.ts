@@ -1217,6 +1217,79 @@ export const records = [
   },
   {
     "schemaVersion": "0.1",
+    "id": "openai-jacobian-conjecture",
+    "problemIds": [
+      "jacobian-conjecture"
+    ],
+    "promptId": "openai-jacobian-conjecture",
+    "title": "OpenAI independently derives a Jacobian Conjecture counterexample",
+    "recordType": "case",
+    "domain": "mathematics",
+    "field": "algebraic geometry",
+    "outcome": "complete",
+    "contributionMode": "human-ai collaboration",
+    "summary": "An OpenAI task prompt and accompanying derivation give a three-variable polynomial map with constant Jacobian determinant and a three-point fiber, independently reproducing the mechanism behind the newly announced disproof of the Jacobian Conjecture.",
+    "people": [
+      "Levent Alpöge",
+      "Aaron Lou"
+    ],
+    "organizations": [
+      "Anthropic",
+      "OpenAI"
+    ],
+    "systems": [
+      "Claude Fable 5 (reported original discovery)",
+      "Undisclosed OpenAI system (independent prompt and derivation)"
+    ],
+    "promptAvailability": "full",
+    "timeline": [
+      {
+        "date": "2026-07-19",
+        "precision": "day",
+        "type": "disclosure",
+        "label": "Levent Alpöge publicly announces the original three-variable counterexample"
+      },
+      {
+        "date": "2026-07-20",
+        "precision": "day",
+        "type": "disclosure",
+        "label": "Aaron Lou shares OpenAI's independent derivation and exact task prompt"
+      }
+    ],
+    "validation": [
+      {
+        "type": "replication",
+        "status": "passed",
+        "note": "The supplied derivation gives exact polynomial identities for the Jacobian determinant and a three-point fiber of an equivalent coordinate presentation; both are directly checkable by symbolic expansion and substitution."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Levent Alpöge's original counterexample announcement",
+        "url": "https://x.com/__alpoge__/status/2079028340955197566",
+        "kind": "announcement"
+      },
+      {
+        "label": "Aaron Lou's OpenAI derivation post",
+        "url": "https://x.com/aaron_lou/status/2079218392452530249?s=20",
+        "kind": "paper"
+      },
+      {
+        "label": "Aaron Lou's OpenAI prompt post",
+        "url": "https://x.com/aaron_lou/status/2079218394276966804?s=20",
+        "kind": "prompt"
+      },
+      {
+        "label": "Jacobian Conjecture background and current counterexample summary",
+        "url": "https://en.wikipedia.org/wiki/Jacobian_conjecture",
+        "kind": "announcement"
+      }
+    ],
+    "caveat": "Levent Alpöge's announcement is the original public breakthrough. The locally preserved OpenAI prompt and supplied derivation are an independent reproduction, not the prompt from the original discovery. The source is too recent for this archive to claim peer review or an audited formalization.",
+    "editorialNote": "Levent Alpöge first publicly disclosed the counterexample and should receive credit for that breakthrough. His announcement gives a map \\(G : \\mathbb{C}^3 \\to \\mathbb{C}^3\\) with constant Jacobian determinant \\(-2\\) and three distinct inputs mapping to the same output. Noninjectivity immediately rules out a polynomial inverse.\n\nAaron Lou subsequently shared an OpenAI prompt and a self-contained derivation. The derivation starts with the three choices of a linear factor of a cubic, fixes a resultant-normalized factorization, and constructs a polynomial affine chart. Its displayed map is a coordinate-equivalent presentation of Alpöge's map: it applies \\((x,y,z) \\mapsto (x,y,-z)\\) to the input and reverses the three output coordinates. Consequently it has the same constant Jacobian determinant, while the particular displayed three-point fiber differs from the one in Alpöge's announcement.\n\nThe prompt is unusually complete as an archival artifact. It specifies the success criterion, prohibits common false-positive forms of progress, requires dynamic multi-agent exploration and adversarial checking, and disallows public search for a solution to the exact benchmark. The source text is preserved as an exact Markdown transcription with its provenance metadata."
+  },
+  {
+    "schemaVersion": "0.1",
     "id": "sciexplorer-physics-models",
     "problemIds": [
       "simulated-physics-model-discovery"
@@ -1765,6 +1838,20 @@ export const problems = [
   },
   {
     "schemaVersion": "0.1",
+    "id": "jacobian-conjecture",
+    "title": "Jacobian conjecture",
+    "kind": "problem",
+    "domain": "mathematics",
+    "field": "algebraic geometry",
+    "status": "claimed-disproved",
+    "statusLabel": "Explicit counterexample publicly announced",
+    "statusAsOf": "2026-07-20",
+    "summary": "The characteristic-zero conjecture that every polynomial self-map of affine n-space with nonzero constant Jacobian determinant has a polynomial inverse.",
+    "authoritativeUrl": "https://en.wikipedia.org/wiki/Jacobian_conjecture",
+    "editorialNote": "On July 19, 2026, Levent Alpöge publicly announced an explicit three-variable counterexample. This archive preserves an independently shared OpenAI prompt and derivation while keeping the original discovery, prompt provenance, and public-validation status distinct."
+  },
+  {
+    "schemaVersion": "0.1",
     "id": "lithium-halide-spinel-optimization",
     "title": "Lithium-halide spinel electrolyte optimization",
     "kind": "research-question",
@@ -2202,6 +2289,39 @@ export const prompts = [
       "missing artifact"
     ],
     "body": "The public account describes a multi-session collaboration and quotes or summarizes some model ideas, but a complete prompt sequence was not published. This record is retained in the index so the absence remains explicit."
+  },
+  {
+    "schemaVersion": "0.2",
+    "id": "openai-jacobian-conjecture",
+    "recordId": "openai-jacobian-conjecture",
+    "title": "OpenAI Jacobian Conjecture prompt",
+    "author": "OpenAI",
+    "origin": "Prompt PDF shared by Aaron Lou in a public X post",
+    "sourceUrl": "https://x.com/aaron_lou/status/2079218394276966804?s=20",
+    "retrievedAt": "2026-07-20",
+    "originalFormat": "PDF",
+    "sourceSha256": "49c43ed410dc19ad9bd5ec252451d09b1a892efdcc95bd72ccd6c593a1cd3fa1",
+    "artifactType": "single-task-prompt",
+    "completeness": "exact",
+    "permissionBasis": "The complete prompt was publicly published by OpenAI and shared by Aaron Lou. This Markdown transcription preserves attribution, source link, and source hash.",
+    "publicationStatus": "approved",
+    "transcriptionMode": "Verbatim transcription verified against both rendered PDF pages. Repeated running headers, page numbers, and line wrapping were normalized; mathematical notation and all task instructions were retained.",
+    "rawSources": [
+      "sources/openai-jacobian-conjecture/prompt.md"
+    ],
+    "displayFiles": [
+      "sources/openai-jacobian-conjecture/prompt.md"
+    ],
+    "structure": [
+      "complete proof-or-disproof task",
+      "required counterexample evidence",
+      "excluded partial results",
+      "dynamic multi-agent search instructions",
+      "adversarial verification requirements",
+      "eight-hour minimum duration",
+      "public-search constraint"
+    ],
+    "body": "This is the complete disclosed task prompt shared by OpenAI. The associated derivation is separately documented in the linked record and is not part of the prompt transcript.\n\n========================================\n\nSOURCE FILE: sources/openai-jacobian-conjecture/prompt.md\n\n# Jacobian Conjecture Prompt\n\n## Current task statement\n\nLet \\(n \\geq 1\\). A polynomial map \\(F : \\mathbb{C}^n \\to \\mathbb{C}^n\\) is a map\n\n\\[\nF(x) = \\bigl(F_1(x), \\ldots, F_n(x)\\bigr),\n\\]\n\nwhere each \\(F_i \\in \\mathbb{C}[x_1, \\ldots, x_n]\\). Its Jacobian determinant is\n\n\\[\n\\det JF = \\det \\left(\\frac{\\partial F_i}{\\partial x_j}\\right).\n\\]\n\nResolve the Jacobian Conjecture completely:\n\nEvery polynomial map \\(F : \\mathbb{C}^n \\to \\mathbb{C}^n\\) with nonzero constant Jacobian determinant has a polynomial inverse.\n\nYou must either:\n\n1. Prove that for every \\(n \\geq 1\\), if \\(\\det JF \\in \\mathbb{C}^{\\times}\\), then there exists a polynomial map \\(G : \\mathbb{C}^n \\to \\mathbb{C}^n\\) such that \\(G \\circ F = \\operatorname{id}_{\\mathbb{C}^n}\\) and \\(F \\circ G = \\operatorname{id}_{\\mathbb{C}^n}\\);\n2. Disprove the conjecture by giving an explicit polynomial map \\(F : \\mathbb{C}^n \\to \\mathbb{C}^n\\) with nonzero constant Jacobian determinant and proving rigorously that \\(F\\) has no polynomial inverse.\n\nA complete disproof must include an explicit dimension \\(n\\), explicit coordinate polynomials \\(F_1, \\ldots, F_n\\), an exact computation showing \\(\\det JF \\in \\mathbb{C}^{\\times}\\), and a complete proof that no polynomial inverse exists.\n\nPartial progress does not count unless it implies exactly one of the two resolutions above. In particular, proofs only in dimension 1 or 2, bounded-degree cases, homogeneous or cubic reductions without completing the reduced case, formal power-series inverses, local analytic inverses, injectivity assumptions, birationality assumptions, reductions to another unproved conjecture, computational verification through any fixed dimension or degree, or candidate counterexamples without a complete noninvertibility proof are insufficient.\n\n## Search and coordination requirements\n\nUse multiagent v2 aggressively and dynamically. You have up to 64 concurrent agents available. Do not use a fixed assignment such as \"N agents for strategy X.\" Instead, manage the search using the following heuristics:\n\n- Begin with a genuinely diverse portfolio of proof and counterexample approaches. Agents should explore algebraic geometry, commutative algebra, polynomial automorphism theory, degree growth, formal inverse expansions, cubic homogeneous reductions, differential forms, étale morphisms, invariant theory, valuations, Newton polyhedra, elimination theory, locally nilpotent derivations, topology, model theory, and computational sanity checks.\n- Preserve independence during early rounds. Do not tell most agents the currently favored proof or counterexample strategy.\n- Maintain an explicit registry of approach families. Group agents by the mathematical idea they are using, not by superficial wording. Redirect agents when too many converge to the same incomplete route.\n- Do not allow one approach to dominate merely because it gives elegant reductions. A route that ends at a lemma equivalent in strength to the original conjecture is not close to completion unless it supplies a genuinely new proof of that lemma.\n- When an approach stalls at a theorem-strength missing lemma, mark that route as blocked. Continue only if someone proposes a materially new mechanism, invariant, construction, or obstruction.\n- Keep several incompatible proof and disproof routes alive through multiple rounds. Cross-pollinate ideas only after independent agents have exposed the real strengths and gaps of their approaches.\n- Use adversarial agents throughout. Every affirmative proof must be checked for confusion between formal and polynomial inverses, local and global invertibility, analytic and algebraic arguments, hidden injectivity or surjectivity assumptions, characteristic-zero dependence, degree bounds, denominators introduced by inversion, unjustified convergence claims, nonreversible reductions, and circular use of statements equivalent to the Jacobian Conjecture.\n- Every proposed counterexample must be checked for exact Jacobian determinant computation, hidden polynomial inverses, birational inverses, coordinate changes that trivialize it, numerical artifacts, characteristic-\\(p\\) phenomena mistakenly imported into \\(\\mathbb{C}\\), and incomplete noninvertibility arguments.\n- Require agents to return concrete lemmas, constructions, equations, degree estimates, explicit candidate maps, or counterexamples to proposed sublemmas. Reject status reports, vague optimism, and claims that an unproved global compatibility statement is \"routine.\"\n- The root agent should repeatedly synthesize, challenge, redirect, and launch new rounds. Do not stop after the first wave fails.\n\nReturn only when either a complete affirmative proof or a complete explicit counterexample survives adversarial audit. Do not return a reduction, partial result, isolated missing lemma, \"best effort\" summary, or explanation of why the problem is difficult.\n\nSpend at least 8 hours on this before even thinking of returning or giving up.\n\nPublic search may be used only for ordinary mathematical background or standard named theorems, not to search for a solution to this exact conjecture or benchmark. Do not search the public web merely to determine whether the Jacobian Conjecture is open, and do not answer that it is open."
   },
   {
     "schemaVersion": "0.2",

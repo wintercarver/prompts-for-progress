@@ -1,0 +1,7 @@
+---
+{"schemaVersion":"0.2","id":"openai-jacobian-conjecture","recordId":"openai-jacobian-conjecture","title":"OpenAI Jacobian Conjecture prompt","author":"OpenAI","origin":"Prompt PDF shared by Aaron Lou in a public X post","sourceUrl":"https://x.com/aaron_lou/status/2079218394276966804?s=20","retrievedAt":"2026-07-20","originalFormat":"PDF","sourceSha256":"49c43ed410dc19ad9bd5ec252451d09b1a892efdcc95bd72ccd6c593a1cd3fa1","artifactType":"single-task-prompt","completeness":"exact","permissionBasis":"The complete prompt was publicly published by OpenAI and shared by Aaron Lou. This Markdown transcription preserves attribution, source link, and source hash.","publicationStatus":"approved","transcriptionMode":"Verbatim transcription verified against both rendered PDF pages. Repeated running headers, page numbers, and line wrapping were normalized; mathematical notation and all task instructions were retained.","rawSources":["sources/openai-jacobian-conjecture/prompt.md"],"displayFiles":["sources/openai-jacobian-conjecture/prompt.md"],"structure":["complete proof-or-disproof task","required counterexample evidence","excluded partial results","dynamic multi-agent search instructions","adversarial verification requirements","eight-hour minimum duration","public-search constraint"]}
+---
+
+# Exact prompt transcript
+
+This is the complete disclosed task prompt shared by OpenAI. The associated derivation is separately documented in the linked record and is not part of the prompt transcript.

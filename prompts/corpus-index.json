@@ -265,6 +265,21 @@
     "sourcePaths": []
   },
   {
+    "promptId": "openai-jacobian-conjecture",
+    "recordId": "openai-jacobian-conjecture",
+    "title": "OpenAI Jacobian Conjecture prompt",
+    "artifactType": "single-task-prompt",
+    "completeness": "exact",
+    "publicationStatus": "approved",
+    "sourceUrl": "https://x.com/aaron_lou/status/2079218394276966804?s=20",
+    "sourceCommit": null,
+    "contentAvailable": true,
+    "artifactCount": 1,
+    "sourcePaths": [
+      "sources/openai-jacobian-conjecture/prompt.md"
+    ]
+  },
+  {
     "promptId": "sciexplorer-physics-models",
     "recordId": "sciexplorer-physics-models",
     "title": "SciExplorer physics-model discovery prompt and run",
